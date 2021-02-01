@@ -28,10 +28,20 @@
         </article>
     </main>
     <script>
+        let greetin = "Hello World!";
+        console.log(greetin);
+
+        let minTekst = "her er en tekst";
+        //minTekst = minTekst + " , som fortsætter her!";
+        //minTekst += " , som fortsætter her!";
+        minTekst = `${minTekst}, som fortsætter her`;
+
         document.querySelector("article").addEventListener("click", doSomeThing);
 
         function doSomeThing() {
             this.style.background = "red";
+
+
         }
 
     </script>
