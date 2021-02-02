@@ -37,50 +37,28 @@
             //hvad er det yngste din date må være
             minimumA = Math.round(din / 2 + 7);
             maximumA = Math.round((din - 7) * 2);
-            console.log("minimumA", minimumA);
+            console.log("minimum alder", minimumA);
             console.log("maximumA", maximumA);
 
 
             if (din < 15 || date < 15) {
-                console.log("under 15 er jo ulovligt")
+
+                console.log("Under 15 er ulovligt");
             } else {
-                if (date >= maximumA && date <= maximumA) {
-                    console.log("den er fin");
+                if (date >= minimumA && date <= maximumA) {
+                    console.log(`Du er ${din} og din date er ${date}.`);
+                    console.log("I må gerne bolle");
 
 
                 } else if (date < minimumA) {
 
                     console.log(`Du er ${din} og din date er ${date}. Din date er ${minimumA-date} år for ung`);
+                } else if (date >= maximumA) {
+                    console.log(`Du er ${din} og din date er ${date}. Din date er ${minimumA-date} år for gammel`);
                 }
             }
 
 
-            /*   let resultat;
-               if (isNaN(age)) {
-                   resultat = "Det er ikke et tal, prøv igen!";
-               } else if (din > date) {
-                   let regl1 = din / 2 + 7;
-               } else if (din < date) {
-                   let regl2 = (din - 7) * 2;
-
-               }
-
-
-
-               if (regl1 <= date) {
-                   resultat = "HURRA";
-               } else {
-                   resultat = "NEJ";
-               }
-
-               if (regl2 >= date) {
-                   resultat = "HURRAR2";
-               } else {
-                   resultat = "NEEEJ";
-               }
-
-
-               console.log(resultat);*/
 
         }
 
