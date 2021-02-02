@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <p>Din hunds alder</p>
+    <input type="text" id="alder">
+    <br>
+    <button>Beregn hunds mennekse alder</button>
+
+    <script>
+        let gammelMetode;
+        let nyMetode;
+        let alder;
+
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+
+            alder = document.querySelector("#alder").value;
+            gammelMetode = Math.round(alder * 7.5);
+            nyMetode = Math.round(16 * Math.log(12) + 31);
+            console.log(`Din hund er ${alder} år gammel i hunde år`)
+            console.log(`Din hund er ${gammelMetode} år gammel i menneske år, i følge den gamle metode`)
+            console.log(`Din hund er ${nyMetode} år gammel i menneske år, i følge den nye metode`)
+        }
+
+    </script>
+</body>
+
+</html>
