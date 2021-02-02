@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics</title>
+    <link rel="stylesheet" href="">
+
+
+
+</head>
+
+<body>
+    <p>Indsæt din alder</p>
+    <input type="text" id="din">
+    <p>Indsæt din dates alder</p>
+    <input type="text" id="date">
+    <br>
+    <button>
+        Klik for at beregne om din date er
+        <br> for gammel, for ung eller rigtig til dig, kik i konsolen
+    </button>
+
+    <script>
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+
+            let din = document.querySelector("#din").value;
+            let date = document.querySelector("#date").value;
+            let age = (din, date);
+
+            let resultat;
+            if (isNaN(age)) {
+                resultat = "Det er ikke et tal, prøv igen!";
+            } else if (din > date) {
+                let regl1 = din / 2 + 7 <= date;
+
+
+            } else if (din < date) {
+                let regl2 = din - 7 >= 0.5 * date;
+            }
+
+
+            console.log(resultat);
+
+        }
+
+    </script>
+</body>
+
+</html>
