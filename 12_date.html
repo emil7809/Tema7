@@ -30,16 +30,31 @@
             let din = document.querySelector("#din").value;
             let date = document.querySelector("#date").value;
             let age = (din, date);
+            let regl1 = din / 2 + 7;
+            let regl2 = (din - 7) * 2;
 
             let resultat;
             if (isNaN(age)) {
                 resultat = "Det er ikke et tal, prøv igen!";
             } else if (din > date) {
-                let regl1 = din / 2 + 7 <= date;
-
-
+                let regl1 = din / 2 + 7;
             } else if (din < date) {
-                let regl2 = din - 7 >= 0.5 * date;
+                let regl2 = (din - 7) * 2;
+
+            }
+
+
+
+            if (regl1 <= date) {
+                resultat = "HURRA";
+            } else {
+                resultat = "NEJ";
+            }
+
+            if (regl2 >= date) {
+                resultat = "HURRAR2";
+            } else {
+                resultat = "NEEEJ";
             }
 
 
