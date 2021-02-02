@@ -22,7 +22,34 @@
         <br>Covid-19 er sadig en lille bitch</button>
 
     <script>
+        const point = Math.round(Math.random() * 20);
+        let antalGæt = 0;
         document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+
+            antalGæt++;
+
+            const tal = document.querySelector("#tal").value;
+
+
+            let resultat;
+            if (isNaN(tal)) {
+                resultat = "Det er ikke et tal, prøv igen!";
+            } else if (tal < point) {
+                resultat = `Dit gæt er for LAVT, prøv igen! du har gættet ${antalGæt} gange`;
+            } else if (tal > point) {
+                resultat = "Dit gæt er for HØJT, prøv igen!";
+            } else {
+                resultat = "WINNER WINNER COVID FRI DINNER";
+            }
+
+            console.log(resultat);
+
+        }
+
+
+        /*document.querySelector("button").addEventListener("click", buttonClicked);
 
         function buttonClicked() {
 
@@ -42,7 +69,7 @@
 
             console.log(resultat);
 
-        }
+        }*/
 
     </script>
 </body>

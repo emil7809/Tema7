@@ -23,44 +23,105 @@
     </button>
 
     <script>
+        let din;
+        let date;
+        let minimumA;
+        let maximumA;
+
         document.querySelector("button").addEventListener("click", buttonClicked);
 
         function buttonClicked() {
 
-            let din = document.querySelector("#din").value;
-            let date = document.querySelector("#date").value;
-            let age = (din, date);
-            let regl1 = din / 2 + 7;
-            let regl2 = (din - 7) * 2;
-
-            let resultat;
-            if (isNaN(age)) {
-                resultat = "Det er ikke et tal, prøv igen!";
-            } else if (din > date) {
-                let regl1 = din / 2 + 7;
-            } else if (din < date) {
-                let regl2 = (din - 7) * 2;
-
-            }
+            din = document.querySelector("#din").value;
+            date = document.querySelector("#date").value;
+            //hvad er det yngste din date må være
+            minimumA = Math.round(din / 2 + 7);
+            maximumA = Math.round((din - 7) * 2);
+            console.log("minimumA", minimumA);
+            console.log("maximumA", maximumA);
 
 
-
-            if (regl1 <= date) {
-                resultat = "HURRA";
+            if (din < 15 || date < 15) {
+                console.log("under 15 er jo ulovligt")
             } else {
-                resultat = "NEJ";
+                if (date >= maximumA && date <= maximumA) {
+                    console.log("den er fin");
+
+
+                } else if (date < minimumA) {
+
+                    console.log(`Du er ${din} og din date er ${date}. Din date er ${minimumA-date} år for ung`);
+                }
             }
 
-            if (regl2 >= date) {
-                resultat = "HURRAR2";
-            } else {
-                resultat = "NEEEJ";
-            }
+
+            /*   let resultat;
+               if (isNaN(age)) {
+                   resultat = "Det er ikke et tal, prøv igen!";
+               } else if (din > date) {
+                   let regl1 = din / 2 + 7;
+               } else if (din < date) {
+                   let regl2 = (din - 7) * 2;
+
+               }
 
 
-            console.log(resultat);
+
+               if (regl1 <= date) {
+                   resultat = "HURRA";
+               } else {
+                   resultat = "NEJ";
+               }
+
+               if (regl2 >= date) {
+                   resultat = "HURRAR2";
+               } else {
+                   resultat = "NEEEJ";
+               }
+
+
+               console.log(resultat);*/
 
         }
+
+        /* document.querySelector("button").addEventListener("click", buttonClicked);
+
+         function buttonClicked() {
+
+             let din = document.querySelector("#din").value;
+             let date = document.querySelector("#date").value;
+             let age = (din, date);
+             let regl1 = din / 2 + 7;
+             let regl2 = (din - 7) * 2;
+
+             let resultat;
+             if (isNaN(age)) {
+                 resultat = "Det er ikke et tal, prøv igen!";
+             } else if (din > date) {
+                 let regl1 = din / 2 + 7;
+             } else if (din < date) {
+                 let regl2 = (din - 7) * 2;
+
+             }
+
+
+
+             if (regl1 <= date) {
+                 resultat = "HURRA";
+             } else {
+                 resultat = "NEJ";
+             }
+
+             if (regl2 >= date) {
+                 resultat = "HURRAR2";
+             } else {
+                 resultat = "NEEEJ";
+             }
+
+
+             console.log(resultat);
+
+         }*/
 
     </script>
 </body>
