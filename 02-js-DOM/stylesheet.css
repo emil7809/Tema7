@@ -26,8 +26,8 @@ article {
     border-width: 1px;
 }
 #second img:first-of-type + h3 {
-    color: gray;
+    color: #555555;
 }
 h3:nth-child(2) {
-    color: lime;
+    color: darkblue;
 }
