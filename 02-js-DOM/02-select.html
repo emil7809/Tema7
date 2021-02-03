@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        Titel
+        <h1>Titel</h1>
     </header>
 
     <main>
@@ -23,7 +23,7 @@
                 <h3>So cute</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat maximus nulla, eu efficitur sem lobortis vel. Praesent venenatis metus a nisi volutpat, at condimentum turpis malesuada. Sed in eleifend ipsum.</p>
             </article>
-            <article id="first">
+            <article id="second">
                 <img src="https://placeimg.com/400/300/nature" alt="nature" class="nature">
                 <h3>Freaking pretty</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat maximus nulla, eu efficitur sem lobortis vel. Praesent venenatis metus a nisi volutpat, at condimentum turpis malesuada. Sed in eleifend ipsum.</p>
@@ -37,14 +37,38 @@
     </footer>
 
     <script>
-        const titel = document.querySelector("header");
-        console.log(titel);
-        titel.textContent = "Billede Galleri";
-        titel.innerHTML = "<h1>I like Oranges</h1>"
+        //        const titel = document.querySelector("header");
+        //        console.log(titel);
+        //        titel.textContent = "Billede Galleri";
+        //        titel.innerHTML = "<h1>I like Oranges</h1>"
+        //
+        //        const pic1 = document.querySelector("article:first-child img");
+        //        console.log(pic1);
+        //        pic1.alt = "billede af dyr";
+
+        const titel = document.querySelector("h1");
+        titel.textContent = "I like Oranges";
+        console.log(titel.textContent);
+
+        const overskrift = document.querySelector("main h2");
+        titel.textContent;
+        console.log(overskrift.textContent);
 
         const pic1 = document.querySelector("article:first-child img");
-        console.log(pic1);
         pic1.alt = "billede af dyr";
+        console.log(pic1.alt);
+
+        const mellemru1 = document.querySelector("h3");
+        mellemru1.textContent;
+        console.log(mellemru1.textContent);
+
+        const pic2 = document.querySelector("#second img");
+        pic2.alt = "billede af natur";
+        console.log(pic2.alt);
+
+        const mellemru2 = document.querySelector("#second h3");
+        mellemru2.textContent;
+        console.log(mellemru2.textContent);
 
     </script>
 </body>

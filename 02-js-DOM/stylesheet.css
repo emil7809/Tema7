@@ -25,3 +25,9 @@ article {
     border-color: black;
     border-width: 1px;
 }
+#second img:first-of-type + h3 {
+    color: gray;
+}
+h3:nth-child(2) {
+    color: lime;
+}
