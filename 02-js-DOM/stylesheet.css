@@ -31,3 +31,7 @@ article {
 h3:nth-child(2) {
     color: darkblue;
 }
+.shadow {
+    box-shadow: 10px 10px 15px 1px rgba(0, 0, 0, 0.6);
+    transition-duration: 0.5s;
+}
