@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+
+        <h2>This is idyllic n shit</h2>
+        <section>
+            <article id="first">
+                <img src="https://placeimg.com/400/300/animals" alt="" class="animal">
+                <h3>So cute</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat maximus nulla, eu efficitur sem lobortis vel. Praesent venenatis metus a nisi volutpat, at condimentum turpis malesuada. Sed in eleifend ipsum.</p>
+            </article>
+            <article id="second">
+                <img src="https://placeimg.com/400/300/nature" alt="nature" class="nature">
+                <h3>Freaking pretty</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat maximus nulla, eu efficitur sem lobortis vel. Praesent venenatis metus a nisi volutpat, at condimentum turpis malesuada. Sed in eleifend ipsum.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>I still like oranges</p>
+    </footer>
+
+    <script>
+        const titel = document.querySelector("h1");
+        titel.textContent = "I like Oranges • It's my favorit color";
+        console.log(titel.textContent);
+
+        const overskrift = document.querySelector("main h2");
+        overskrift.textContent = "This is idyllic • I mean just look at that shit"
+        console.log(overskrift.textContent);
+
+        const pic1 = document.querySelector("article:first-child img");
+        pic1.alt = "creeps";
+        console.log(pic1.alt);
+        pic1.src = "billeder/them.jpeg";
+        pic1.width = 400;
+        pic1.height = 300;
+
+        const mellemru1 = document.querySelector("h3");
+        mellemru1.textContent = "Creeps holy shit";
+        console.log(mellemru1.textContent);
+
+        const brød = document.querySelector("#first p");
+        brød.textContent += "This is latin lol";
+        console.log(brød.textContent);
+
+        const pic2 = document.querySelector("#second img");
+        pic2.alt = "jeg er også en creep";
+        console.log(pic2.alt);
+        pic2.src = "billeder/us.jpeg";
+        pic2.width = 400;
+        pic2.height = 300;
+
+        const mellemru2 = document.querySelector("#second img:first-of-type + h3");
+        mellemru2.textContent = "Fuck I'm one of them"
+        console.log(mellemru2.textContent);
+
+        const brød2 = document.querySelector("article:nth-child(2) p");
+        brød2.innerHTML += "<b>This is ALSO latin rofl</b>";
+        console.log(brød2.textContent);
+
+    </script>
+</body>
+
+</html>
