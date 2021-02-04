@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <article>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </article>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM er loaded");
+
+            let dyr = [{
+                "navn": "Gris",
+                "type": "pattedyr",
+                "levested": "svinefarme",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+            }, {
+                "navn": "frø",
+                "type": "pade",
+                "levested": "sump",
+                "billede": "http://mabe-kea.dk/E19/pics/frog.png"
+            }, {
+                "navn": "ræv",
+                "type": "pattedyr",
+                "levested": "skov",
+                "billede": "http://mabe-kea.dk/E19/pics/fox.png"
+            }, {
+                "navn": "sild",
+                "type": "fisk",
+                "levested": "saltvand",
+                "billede": "http://mabe-kea.dk/E19/pics/sild.jpg"
+            }, {
+                "navn": "krokodille",
+                "type": "reptil",
+                "levested": "vand",
+                "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg"
+            }];
+
+            console.log("Array", dyr);
+
+            const article = document.querySelector("article");
+            const infoGris = `${dyr[0].navn}, ${dyr[0].type} fra ${dyr[0].levested}`;
+            article.querySelector("article,p:nth-child(1)").textContent = infoGris;
+
+            const infoFrø = `${dyr[1].navn}, ${dyr[1].type} fra ${dyr[1].levested}`;
+            article.querySelector("article,p:nth-child(2)").textContent = infoFrø;
+
+            const infoRæv = `${dyr[2].navn}, ${dyr[2].type} fra ${dyr[2].levested}`;
+            article.querySelector("article,p:nth-child(3)").textContent = infoRæv;
+
+            const infoSild = `${dyr[3].navn}, ${dyr[3].type} fra ${dyr[3].levested}`;
+            article.querySelector("article,p:nth-child(4)").textContent = infoSild;
+
+            const infoKrok = `${dyr[4].navn}, ${dyr[4].type} fra ${dyr[4].levested}`;
+            article.querySelector("article,p:nth-child(5)").textContent = infoKrok;
+
+
+
+
+
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>
