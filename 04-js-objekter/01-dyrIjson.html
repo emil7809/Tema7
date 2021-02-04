@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section class="data-container"></section>
+    <template>
+        <article class="border">
+            <h3></h3>
+            <img src="" alt="">
+            <p>Type: </p>
+            <p>Levested: </p>
+        </article>
+    </template>
+
+    <script>
+        const container = document.querySelector(".data-container");
+        const dyrTemplate = document.querySelector("template");
+
+        const fil = "alleDyr.json";
+
+        async function hentada(fil) {
+            const result = await fetch(fil);
+            const json = await result.json();
+            vis(json);
+        }
+
+        function vis(dyr) {
+            dyr.forEach(dyrene => {
+                let klon = dyrTemplate.cloneNode(true).content;
+
+                klon.querySelector("h3").textContent = dyrene.navn;
+                klon.querySelector("img").src = dyrene.billede;
+                klon.querySelector("p").textContent += dyrene.type;
+                klon.querySelector("article p:first-of-type + p").textContent += dyrene.levested;
+                container.appendChild(klon);
+            })
+        }
+        hentada(fil);
+
+    </script>
+
+    <style>
+        .border {
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+            display: grid;
+            justify-content: center;
+            text-align: center;
+        }
+
+    </style>
+</body>
+
+</html>
