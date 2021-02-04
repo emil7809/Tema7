@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section class="data-container"></section>
+    <template>
+        <article class="border">
+            <h3></h3>
+            <img src="" alt="">
+            <p>Type: </p>
+            <p>Levested: </p>
+        </article>
+    </template>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM er loaded");
+
+            let dyr = [{
+                "navn": "Gris",
+                "type": "pattedyr",
+                "levested": "svinefarme",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+            }, {
+                "navn": "frø",
+                "type": "pade",
+                "levested": "sump",
+                "billede": "http://mabe-kea.dk/E19/pics/frog.png"
+            }, {
+                "navn": "ræv",
+                "type": "pattedyr",
+                "levested": "skov",
+                "billede": "http://mabe-kea.dk/E19/pics/fox.png"
+            }, {
+                "navn": "sild",
+                "type": "fisk",
+                "levested": "saltvand",
+                "billede": "http://mabe-kea.dk/E19/pics/sild.jpg"
+            }, {
+                "navn": "krokodille",
+                "type": "reptil",
+                "levested": "vand",
+                "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg"
+            }];
+
+            console.log("Array", dyr);
+
+            const container = document.querySelector(".data-container");
+            const dyrTemplate = document.querySelector("template");
+
+
+
+            dyr.forEach(dyrene => {
+                let klon = dyrTemplate.cloneNode(true).content;
+
+                klon.querySelector("h3").textContent = dyrene.navn;
+                klon.querySelector("img").src = dyrene.billede;
+                klon.querySelector("article :first-of-type + p").textContent += dyrene.type;
+                klon.querySelector("article p:first-of-type + p").textContent += dyrene.levested;
+                // klon.classList.add(".border");
+                //container.style.backgroundColor = "lightblue";
+                //container.style.border = "1px solid black";
+                container.appendChild(klon);
+            })
+
+        }
+
+    </script>
+
+    <style>
+        .border {
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+            display: grid;
+            justify-content: center;
+            text-align: center;
+        }
+
+    </style>
+</body>
+
+</html>
