@@ -1,0 +1,125 @@
+<!DOCland html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+
+</head>
+
+<body>
+    <main>
+        <section class="data-container"></section>
+        <section class="data-container"></section>
+        <template>
+            <article class="border">
+
+                <img src="" alt="">
+                <h3></h3>
+                <p></p>
+
+            </article>
+        </template>
+    </main>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM er loaded");
+
+            let event = [{
+                "billede": "https:/odense-film-festival.s3.eu-central-1.amazonaws.com/media/W6dOqabNhHKBPXxxKKEZRA84-360.jpg",
+                "titel": "A calling",
+                "navn": "Christian | ",
+                "land": "Danmark | ",
+                "tid": "20 min"
+            }, {
+                "billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Q8K1pZrOs03Q0IrDkBwGVu5r-360.jpg",
+                "titel": "A Hole In My Head",
+                "navn": "Mees | ",
+                "land": "Holland | ",
+                "tid": "9 min"
+            }, {
+                "billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-360.jpg",
+                "titel": "A Place In The Sun - 110 years after the genocide",
+                "navn": "Cristian | ",
+                "land": "Tyskland | ",
+                "tid": "20 min"
+            }, {
+                "billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Zdt2ODEqSVOkNe8nUaSSu8kd-360.jpg",
+                "titel": "A Tower of Two",
+                "navn": "Jacob | ",
+                "land": "Danmark | ",
+                "tid": "21 min"
+            }, {
+                "billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/2iUOgQpixgIQCxyLtY6KiYuU-360.jpg",
+                "titel": "A Worthy Man",
+                "navn": "Kristian | ",
+                "land": "Danmark | ",
+                "tid": "19 min"
+            }];
+
+            console.log("Array", event);
+
+            const container = document.querySelector(".data-container");
+            const eventTemplate = document.querySelector("template");
+
+
+
+            event.forEach(eventene => {
+                let klon = eventTemplate.cloneNode(true).content;
+
+                klon.querySelector("img").src = eventene.billede;
+                klon.querySelector("h3").textContent = eventene.titel;
+                klon.querySelector("p").textContent += eventene.navn;
+                klon.querySelector("p").textContent += eventene.land;
+                klon.querySelector("p").textContent += eventene.tid;
+
+
+                container.appendChild(klon);
+            })
+
+        }
+
+    </script>
+    <style>
+        main {
+            margin: 0 auto;
+            width: 80vw;
+            max-width: 1000px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-gap: 5px;
+        }
+
+        img {
+            width: 320px;
+        }
+
+        .border {
+            margin: 5px;
+            padding: 5px;
+            display: grid;
+            width: 320px;
+            height: 320px;
+        }
+
+        p,
+        h3 {
+            margin-top: -40;
+        }
+
+        p {
+            margin-top: -50;
+        }
+
+    </style>
+</body>
+
+</html>
