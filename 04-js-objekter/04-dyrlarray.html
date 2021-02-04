@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <article>
+        <h3>Øvelse 4: Dyr i array</h3>
+        <p></p>
+        <img src="" alt="">
+    </article>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM er loaded");
+
+            let dyr = [{
+                "navn": "gris",
+                "type": "pattedyr",
+                "levested": "svinefarme",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+            }, {
+                "navn": "frø",
+                "type": "pade",
+                "levested": "sump",
+                "billede": "http://mabe-kea.dk/E19/pics/frog.png"
+            }, {
+                "navn": "ræv",
+                "type": "pattedyr",
+                "levested": "skov",
+                "billede": "http://mabe-kea.dk/E19/pics/fox.png"
+            }, {
+                "navn": "sild",
+                "type": "fisk",
+                "levested": "saltvand",
+                "billede": "http://mabe-kea.dk/E19/pics/sild.jpg"
+            }, {
+                "navn": "krokodille",
+                "type": "reptil",
+                "levested": "vand",
+                "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg"
+            }];
+
+            console.log("Array", dyr);
+
+            //const article = document.querySelector("article");
+            //const info = `navn:${dyr.navn}, type:${dyr.type}, levested:${dyr.levested}`;
+            //article.querySelector("p").textContent = info;
+            // article.querySelector("img").src = dyr.billede;
+
+        }
+
+    </script>
+</body>
+
+</html>
