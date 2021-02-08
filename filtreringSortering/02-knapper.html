@@ -32,7 +32,14 @@
 </head>
 
 <body>
-
+    <header>
+        <nav>
+            <button data-troende="alle" class="valgt">Alle</button>
+            <button data-troende="ja">Troende</button>
+            <button data-troende="nej">Ikke Troende</button>
+            <button data-troende="tvivler">Tvivler</button>
+        </nav>
+    </header>
     <section id="liste"></section>
 
     <template>
@@ -53,7 +60,7 @@
         }
         document.addEventListener("DOMContentLoaded", start)
         let personer;
-        let filter = "ja";
+
         // første funktion der kaldes efter DOM er loaded
         function start() {
             loadJSON();
@@ -75,12 +82,12 @@
             const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
             personer.forEach(person => {
                 // loop igennem json (personer)
-                if (filter == person.troende) {
-                    const klon = skabelon.cloneNode(true);
-                    klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
-                    klon.querySelector(".profil-billede").src = medieurl + person.billede;
-                    dest.appendChild(klon);
-                }
+
+                const klon = skabelon.cloneNode(true);
+                klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
+                klon.querySelector(".profil-billede").src = medieurl + person.billede;
+                dest.appendChild(klon);
+
 
 
 
